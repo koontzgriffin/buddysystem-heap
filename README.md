@@ -1,2 +1,2 @@
-# buddysystem-heap
-An implementation of a buddy system heap written in bcpl.
+# buddy system - memory allocation
+An implementation of the buddy system for memmory allocation.
