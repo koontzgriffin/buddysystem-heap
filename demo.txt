@@ -1,0 +1,538 @@
+init heap with 95 words
+init heap with 1534 words
+x to exit.
+# blah blah blah for an unobtrusive comment.
+?N to examine any chunk. N is its real address, which is the value returned by newvec minus two.
+vf to freevec the variable named v. Variable names are single lower-case letters.
+v? to see the value of variable v.
+vnN to newvec(N), N is number of words wanted, v is the variable in which the returned value will be stored,
+                  the response is v = A, where A is the pointer returned by newvec.
+
+0: 1534 words, FREE
+
+> an30
+for data size of 30, need a chunk of size 47
+at level 0, checking chunk starting at 0
+  a free chunk that must be split
+    created new chunk at 1, size 767
+    created new chunk at 768, size 767
+at level 1, checking chunk starting at 1
+  a free chunk that must be split
+    created new chunk at 2, size 383
+    created new chunk at 385, size 383
+at level 2, checking chunk starting at 2
+  a free chunk that must be split
+    created new chunk at 3, size 191
+    created new chunk at 194, size 191
+at level 3, checking chunk starting at 3
+  a free chunk that must be split
+    created new chunk at 4, size 95
+    created new chunk at 99, size 95
+at level 4, checking chunk starting at 4
+  a free chunk that must be split
+    created new chunk at 5, size 47
+    created new chunk at 52, size 47
+at level 5, checking chunk starting at 5
+  a free chunk of the right size
+retagging chunk 4, split with availability 47 
+retagging chunk 3, split with availability 95 47 
+retagging chunk 2, split with availability 191 95 47 
+retagging chunk 1, split with availability 383 191 95 47 
+retagging chunk 0, split with availability 767 383 191 95 47 
+a = 2147482019
+0: available sizes: 767 383 191 95 47 
+ |  1: available sizes: 383 191 95 47 
+ |   |  2: available sizes: 191 95 47 
+ |   |   |  3: available sizes: 95 47 
+ |   |   |   |  4: available sizes: 47 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: 47 words, FREE
+ |   |   |   |  99: 95 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> bn4
+for data size of 4, need a chunk of size 5
+at level 0, checking chunk starting at 0
+  a split chunk, availability: 767 383 191 95 47 
+at level 1, checking chunk starting at 1
+  a split chunk, availability: 383 191 95 47 
+at level 2, checking chunk starting at 2
+  a split chunk, availability: 191 95 47 
+at level 3, checking chunk starting at 3
+  a split chunk, availability: 95 47 
+at level 4, checking chunk starting at 4
+  a split chunk, availability: 47 
+at level 5, checking chunk starting at 52
+  a free chunk that must be split
+    created new chunk at 53, size 23
+    created new chunk at 76, size 23
+at level 6, checking chunk starting at 53
+  a free chunk that must be split
+    created new chunk at 54, size 11
+    created new chunk at 65, size 11
+at level 7, checking chunk starting at 54
+  a free chunk that must be split
+    created new chunk at 55, size 5
+    created new chunk at 60, size 5
+at level 8, checking chunk starting at 55
+  a free chunk of the right size
+retagging chunk 54, split with availability 5 
+retagging chunk 53, split with availability 11 5 
+retagging chunk 52, split with availability 23 11 5 
+retagging chunk 4, split with availability 23 11 5 
+retagging chunk 3, split with availability 95 23 11 5 
+retagging chunk 2, split with availability 191 95 23 11 5 
+retagging chunk 1, split with availability 383 191 95 23 11 5 
+retagging chunk 0, split with availability 767 383 191 95 23 11 5 
+b = 2147482069
+0: available sizes: 767 383 191 95 23 11 5 
+ |  1: available sizes: 383 191 95 23 11 5 
+ |   |  2: available sizes: 191 95 23 11 5 
+ |   |   |  3: available sizes: 95 23 11 5 
+ |   |   |   |  4: available sizes: 23 11 5 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 23 11 5 
+ |   |   |   |   |   |  53: available sizes: 11 5 
+ |   |   |   |   |   |   |  54: available sizes: 5 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, FREE
+ |   |   |   |   |   |   |  65: 11 words, FREE
+ |   |   |   |   |   |  76: 23 words, FREE
+ |   |   |   |  99: 95 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> cn16
+for data size of 16, need a chunk of size 23
+at level 0, checking chunk starting at 0
+  a split chunk, availability: 767 383 191 95 23 11 5 
+at level 1, checking chunk starting at 1
+  a split chunk, availability: 383 191 95 23 11 5 
+at level 2, checking chunk starting at 2
+  a split chunk, availability: 191 95 23 11 5 
+at level 3, checking chunk starting at 3
+  a split chunk, availability: 95 23 11 5 
+at level 4, checking chunk starting at 4
+  a split chunk, availability: 23 11 5 
+at level 5, checking chunk starting at 52
+  a split chunk, availability: 23 11 5 
+at level 6, checking chunk starting at 76
+  a free chunk of the right size
+retagging chunk 52, split with availability 11 5 
+retagging chunk 4, split with availability 11 5 
+retagging chunk 3, split with availability 95 11 5 
+retagging chunk 2, split with availability 191 95 11 5 
+retagging chunk 1, split with availability 383 191 95 11 5 
+retagging chunk 0, split with availability 767 383 191 95 11 5 
+c = 2147482090
+0: available sizes: 767 383 191 95 11 5 
+ |  1: available sizes: 383 191 95 11 5 
+ |   |  2: available sizes: 191 95 11 5 
+ |   |   |  3: available sizes: 95 11 5 
+ |   |   |   |  4: available sizes: 11 5 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 11 5 
+ |   |   |   |   |   |  53: available sizes: 11 5 
+ |   |   |   |   |   |   |  54: available sizes: 5 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, FREE
+ |   |   |   |   |   |   |  65: 11 words, FREE
+ |   |   |   |   |   |  76: 23 words, USED
+ |   |   |   |  99: 95 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> dn6
+for data size of 6, need a chunk of size 11
+at level 0, checking chunk starting at 0
+  a split chunk, availability: 767 383 191 95 11 5 
+at level 1, checking chunk starting at 1
+  a split chunk, availability: 383 191 95 11 5 
+at level 2, checking chunk starting at 2
+  a split chunk, availability: 191 95 11 5 
+at level 3, checking chunk starting at 3
+  a split chunk, availability: 95 11 5 
+at level 4, checking chunk starting at 4
+  a split chunk, availability: 11 5 
+at level 5, checking chunk starting at 52
+  a split chunk, availability: 11 5 
+at level 6, checking chunk starting at 53
+  a split chunk, availability: 11 5 
+at level 7, checking chunk starting at 65
+  a free chunk of the right size
+retagging chunk 53, split with availability 5 
+retagging chunk 52, split with availability 5 
+retagging chunk 4, split with availability 5 
+retagging chunk 3, split with availability 95 5 
+retagging chunk 2, split with availability 191 95 5 
+retagging chunk 1, split with availability 383 191 95 5 
+retagging chunk 0, split with availability 767 383 191 95 5 
+d = 2147482079
+0: available sizes: 767 383 191 95 5 
+ |  1: available sizes: 383 191 95 5 
+ |   |  2: available sizes: 191 95 5 
+ |   |   |  3: available sizes: 95 5 
+ |   |   |   |  4: available sizes: 5 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 5 
+ |   |   |   |   |   |  53: available sizes: 5 
+ |   |   |   |   |   |   |  54: available sizes: 5 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, FREE
+ |   |   |   |   |   |   |  65: 11 words, USED
+ |   |   |   |   |   |  76: 23 words, USED
+ |   |   |   |  99: 95 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> en3
+for data size of 3, need a chunk of size 5
+at level 0, checking chunk starting at 0
+  a split chunk, availability: 767 383 191 95 5 
+at level 1, checking chunk starting at 1
+  a split chunk, availability: 383 191 95 5 
+at level 2, checking chunk starting at 2
+  a split chunk, availability: 191 95 5 
+at level 3, checking chunk starting at 3
+  a split chunk, availability: 95 5 
+at level 4, checking chunk starting at 4
+  a split chunk, availability: 5 
+at level 5, checking chunk starting at 52
+  a split chunk, availability: 5 
+at level 6, checking chunk starting at 53
+  a split chunk, availability: 5 
+at level 7, checking chunk starting at 54
+  a split chunk, availability: 5 
+at level 8, checking chunk starting at 60
+  a free chunk of the right size
+retagging chunk 54, split with availability 
+retagging chunk 53, split with availability 
+retagging chunk 52, split with availability 
+retagging chunk 4, split with availability 
+retagging chunk 3, split with availability 95 
+retagging chunk 2, split with availability 191 95 
+retagging chunk 1, split with availability 383 191 95 
+retagging chunk 0, split with availability 767 383 191 95 
+e = 2147482074
+0: available sizes: 767 383 191 95 
+ |  1: available sizes: 383 191 95 
+ |   |  2: available sizes: 191 95 
+ |   |   |  3: available sizes: 95 
+ |   |   |   |  4: available sizes: 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 
+ |   |   |   |   |   |  53: available sizes: 
+ |   |   |   |   |   |   |  54: available sizes: 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, USED
+ |   |   |   |   |   |   |  65: 11 words, USED
+ |   |   |   |   |   |  76: 23 words, USED
+ |   |   |   |  99: 95 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> fn4
+for data size of 4, need a chunk of size 5
+at level 0, checking chunk starting at 0
+  a split chunk, availability: 767 383 191 95 
+at level 1, checking chunk starting at 1
+  a split chunk, availability: 383 191 95 
+at level 2, checking chunk starting at 2
+  a split chunk, availability: 191 95 
+at level 3, checking chunk starting at 3
+  a split chunk, availability: 95 
+at level 4, checking chunk starting at 99
+  a free chunk that must be split
+    created new chunk at 100, size 47
+    created new chunk at 147, size 47
+at level 5, checking chunk starting at 100
+  a free chunk that must be split
+    created new chunk at 101, size 23
+    created new chunk at 124, size 23
+at level 6, checking chunk starting at 101
+  a free chunk that must be split
+    created new chunk at 102, size 11
+    created new chunk at 113, size 11
+at level 7, checking chunk starting at 102
+  a free chunk that must be split
+    created new chunk at 103, size 5
+    created new chunk at 108, size 5
+at level 8, checking chunk starting at 103
+  a free chunk of the right size
+retagging chunk 102, split with availability 5 
+retagging chunk 101, split with availability 11 5 
+retagging chunk 100, split with availability 23 11 5 
+retagging chunk 99, split with availability 47 23 11 5 
+retagging chunk 3, split with availability 47 23 11 5 
+retagging chunk 2, split with availability 191 47 23 11 5 
+retagging chunk 1, split with availability 383 191 47 23 11 5 
+retagging chunk 0, split with availability 767 383 191 47 23 11 5 
+f = 2147482117
+0: available sizes: 767 383 191 47 23 11 5 
+ |  1: available sizes: 383 191 47 23 11 5 
+ |   |  2: available sizes: 191 47 23 11 5 
+ |   |   |  3: available sizes: 47 23 11 5 
+ |   |   |   |  4: available sizes: 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 
+ |   |   |   |   |   |  53: available sizes: 
+ |   |   |   |   |   |   |  54: available sizes: 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, USED
+ |   |   |   |   |   |   |  65: 11 words, USED
+ |   |   |   |   |   |  76: 23 words, USED
+ |   |   |   |  99: available sizes: 47 23 11 5 
+ |   |   |   |   |  100: available sizes: 23 11 5 
+ |   |   |   |   |   |  101: available sizes: 11 5 
+ |   |   |   |   |   |   |  102: available sizes: 5 
+ |   |   |   |   |   |   |   |  103: 5 words, USED
+ |   |   |   |   |   |   |   |  108: 5 words, FREE
+ |   |   |   |   |   |   |  113: 11 words, FREE
+ |   |   |   |   |   |  124: 23 words, FREE
+ |   |   |   |   |  147: 47 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> ef
+requested deallocation of chunk 60
+looking for chunk 60 in chunk 0, at level 0
+looking for chunk 60 in chunk 1, at level 1
+looking for chunk 60 in chunk 2, at level 2
+looking for chunk 60 in chunk 3, at level 3
+looking for chunk 60 in chunk 4, at level 4
+looking for chunk 60 in chunk 52, at level 5
+looking for chunk 60 in chunk 53, at level 6
+looking for chunk 60 in chunk 54, at level 7
+looking for chunk 60 in chunk 60, at level 8
+  found it, marking as free
+retagging chunk 54, split with availability 5 
+retagging chunk 53, split with availability 5 
+retagging chunk 52, split with availability 5 
+retagging chunk 4, split with availability 5 
+retagging chunk 3, split with availability 47 23 11 5 
+retagging chunk 2, split with availability 191 47 23 11 5 
+retagging chunk 1, split with availability 383 191 47 23 11 5 
+retagging chunk 0, split with availability 767 383 191 47 23 11 5 
+0: available sizes: 767 383 191 47 23 11 5 
+ |  1: available sizes: 383 191 47 23 11 5 
+ |   |  2: available sizes: 191 47 23 11 5 
+ |   |   |  3: available sizes: 47 23 11 5 
+ |   |   |   |  4: available sizes: 5 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 5 
+ |   |   |   |   |   |  53: available sizes: 5 
+ |   |   |   |   |   |   |  54: available sizes: 5 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, FREE
+ |   |   |   |   |   |   |  65: 11 words, USED
+ |   |   |   |   |   |  76: 23 words, USED
+ |   |   |   |  99: available sizes: 47 23 11 5 
+ |   |   |   |   |  100: available sizes: 23 11 5 
+ |   |   |   |   |   |  101: available sizes: 11 5 
+ |   |   |   |   |   |   |  102: available sizes: 5 
+ |   |   |   |   |   |   |   |  103: 5 words, USED
+ |   |   |   |   |   |   |   |  108: 5 words, FREE
+ |   |   |   |   |   |   |  113: 11 words, FREE
+ |   |   |   |   |   |  124: 23 words, FREE
+ |   |   |   |   |  147: 47 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> df
+requested deallocation of chunk 65
+looking for chunk 65 in chunk 0, at level 0
+looking for chunk 65 in chunk 1, at level 1
+looking for chunk 65 in chunk 2, at level 2
+looking for chunk 65 in chunk 3, at level 3
+looking for chunk 65 in chunk 4, at level 4
+looking for chunk 65 in chunk 52, at level 5
+looking for chunk 65 in chunk 53, at level 6
+looking for chunk 65 in chunk 65, at level 7
+  found it, marking as free
+retagging chunk 53, split with availability 11 5 
+retagging chunk 52, split with availability 11 5 
+retagging chunk 4, split with availability 11 5 
+retagging chunk 3, split with availability 47 23 11 5 
+retagging chunk 2, split with availability 191 47 23 11 5 
+retagging chunk 1, split with availability 383 191 47 23 11 5 
+retagging chunk 0, split with availability 767 383 191 47 23 11 5 
+0: available sizes: 767 383 191 47 23 11 5 
+ |  1: available sizes: 383 191 47 23 11 5 
+ |   |  2: available sizes: 191 47 23 11 5 
+ |   |   |  3: available sizes: 47 23 11 5 
+ |   |   |   |  4: available sizes: 11 5 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 11 5 
+ |   |   |   |   |   |  53: available sizes: 11 5 
+ |   |   |   |   |   |   |  54: available sizes: 5 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, FREE
+ |   |   |   |   |   |   |  65: 11 words, FREE
+ |   |   |   |   |   |  76: 23 words, USED
+ |   |   |   |  99: available sizes: 47 23 11 5 
+ |   |   |   |   |  100: available sizes: 23 11 5 
+ |   |   |   |   |   |  101: available sizes: 11 5 
+ |   |   |   |   |   |   |  102: available sizes: 5 
+ |   |   |   |   |   |   |   |  103: 5 words, USED
+ |   |   |   |   |   |   |   |  108: 5 words, FREE
+ |   |   |   |   |   |   |  113: 11 words, FREE
+ |   |   |   |   |   |  124: 23 words, FREE
+ |   |   |   |   |  147: 47 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> cf
+requested deallocation of chunk 76
+looking for chunk 76 in chunk 0, at level 0
+looking for chunk 76 in chunk 1, at level 1
+looking for chunk 76 in chunk 2, at level 2
+looking for chunk 76 in chunk 3, at level 3
+looking for chunk 76 in chunk 4, at level 4
+looking for chunk 76 in chunk 52, at level 5
+looking for chunk 76 in chunk 76, at level 6
+  found it, marking as free
+retagging chunk 52, split with availability 23 11 5 
+retagging chunk 4, split with availability 23 11 5 
+retagging chunk 3, split with availability 47 23 11 5 
+retagging chunk 2, split with availability 191 47 23 11 5 
+retagging chunk 1, split with availability 383 191 47 23 11 5 
+retagging chunk 0, split with availability 767 383 191 47 23 11 5 
+0: available sizes: 767 383 191 47 23 11 5 
+ |  1: available sizes: 383 191 47 23 11 5 
+ |   |  2: available sizes: 191 47 23 11 5 
+ |   |   |  3: available sizes: 47 23 11 5 
+ |   |   |   |  4: available sizes: 23 11 5 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: available sizes: 23 11 5 
+ |   |   |   |   |   |  53: available sizes: 11 5 
+ |   |   |   |   |   |   |  54: available sizes: 5 
+ |   |   |   |   |   |   |   |  55: 5 words, USED
+ |   |   |   |   |   |   |   |  60: 5 words, FREE
+ |   |   |   |   |   |   |  65: 11 words, FREE
+ |   |   |   |   |   |  76: 23 words, FREE
+ |   |   |   |  99: available sizes: 47 23 11 5 
+ |   |   |   |   |  100: available sizes: 23 11 5 
+ |   |   |   |   |   |  101: available sizes: 11 5 
+ |   |   |   |   |   |   |  102: available sizes: 5 
+ |   |   |   |   |   |   |   |  103: 5 words, USED
+ |   |   |   |   |   |   |   |  108: 5 words, FREE
+ |   |   |   |   |   |   |  113: 11 words, FREE
+ |   |   |   |   |   |  124: 23 words, FREE
+ |   |   |   |   |  147: 47 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> bf
+requested deallocation of chunk 55
+looking for chunk 55 in chunk 0, at level 0
+looking for chunk 55 in chunk 1, at level 1
+looking for chunk 55 in chunk 2, at level 2
+looking for chunk 55 in chunk 3, at level 3
+looking for chunk 55 in chunk 4, at level 4
+looking for chunk 55 in chunk 52, at level 5
+looking for chunk 55 in chunk 53, at level 6
+looking for chunk 55 in chunk 54, at level 7
+looking for chunk 55 in chunk 55, at level 8
+  found it, marking as free
+  recombining 55 and 60 to make 54 free
+  recombining 54 and 65 to make 53 free
+  recombining 53 and 76 to make 52 free
+retagging chunk 4, split with availability 47 
+retagging chunk 3, split with availability 47 23 11 5 
+retagging chunk 2, split with availability 191 47 23 11 5 
+retagging chunk 1, split with availability 383 191 47 23 11 5 
+retagging chunk 0, split with availability 767 383 191 47 23 11 5 
+0: available sizes: 767 383 191 47 23 11 5 
+ |  1: available sizes: 383 191 47 23 11 5 
+ |   |  2: available sizes: 191 47 23 11 5 
+ |   |   |  3: available sizes: 47 23 11 5 
+ |   |   |   |  4: available sizes: 47 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: 47 words, FREE
+ |   |   |   |  99: available sizes: 47 23 11 5 
+ |   |   |   |   |  100: available sizes: 23 11 5 
+ |   |   |   |   |   |  101: available sizes: 11 5 
+ |   |   |   |   |   |   |  102: available sizes: 5 
+ |   |   |   |   |   |   |   |  103: 5 words, USED
+ |   |   |   |   |   |   |   |  108: 5 words, FREE
+ |   |   |   |   |   |   |  113: 11 words, FREE
+ |   |   |   |   |   |  124: 23 words, FREE
+ |   |   |   |   |  147: 47 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> ff
+requested deallocation of chunk 103
+looking for chunk 103 in chunk 0, at level 0
+looking for chunk 103 in chunk 1, at level 1
+looking for chunk 103 in chunk 2, at level 2
+looking for chunk 103 in chunk 3, at level 3
+looking for chunk 103 in chunk 99, at level 4
+looking for chunk 103 in chunk 100, at level 5
+looking for chunk 103 in chunk 101, at level 6
+looking for chunk 103 in chunk 102, at level 7
+looking for chunk 103 in chunk 103, at level 8
+  found it, marking as free
+  recombining 103 and 108 to make 102 free
+  recombining 102 and 113 to make 101 free
+  recombining 101 and 124 to make 100 free
+  recombining 100 and 147 to make 99 free
+retagging chunk 3, split with availability 95 47 
+retagging chunk 2, split with availability 191 95 47 
+retagging chunk 1, split with availability 383 191 95 47 
+retagging chunk 0, split with availability 767 383 191 95 47 
+0: available sizes: 767 383 191 95 47 
+ |  1: available sizes: 383 191 95 47 
+ |   |  2: available sizes: 191 95 47 
+ |   |   |  3: available sizes: 95 47 
+ |   |   |   |  4: available sizes: 47 
+ |   |   |   |   |  5: 47 words, USED
+ |   |   |   |   |  52: 47 words, FREE
+ |   |   |   |  99: 95 words, FREE
+ |   |   |  194: 191 words, FREE
+ |   |  385: 383 words, FREE
+ |  768: 767 words, FREE
+
+> af
+requested deallocation of chunk 5
+looking for chunk 5 in chunk 0, at level 0
+looking for chunk 5 in chunk 1, at level 1
+looking for chunk 5 in chunk 2, at level 2
+looking for chunk 5 in chunk 3, at level 3
+looking for chunk 5 in chunk 4, at level 4
+looking for chunk 5 in chunk 5, at level 5
+  found it, marking as free
+  recombining 5 and 52 to make 4 free
+  recombining 4 and 99 to make 3 free
+  recombining 3 and 194 to make 2 free
+  recombining 2 and 385 to make 1 free
+  recombining 1 and 768 to make 0 free
+0: 1534 words, FREE
+
+> zn1000
+for data size of 1000, need a chunk of size 1534
+at level 0, checking chunk starting at 0
+  a free chunk of the right size
+z = 2147482014
+0: 1534 words, USED
+
+> yn4
+for data size of 4, need a chunk of size 5
+at level 0, checking chunk starting at 0
+  Imposible - this is a used chunk
+allocation failed.
+y = -1
+0: 1534 words, USED
+
+> x
